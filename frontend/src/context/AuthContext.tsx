@@ -23,8 +23,8 @@ export const useAuth = () => {
 };
 
 // Set up axios defaults - use environment variable for API URL
-const API_BASE_URL =  'http://localhost:5001';
-axios.defaults.baseURL = API_BASE_URL;
+const VITE_API_URL =  import.meta.env.VITE_API_URL;
+axios.defaults.baseURL = VITE_API_URL;
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
